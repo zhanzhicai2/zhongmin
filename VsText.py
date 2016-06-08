@@ -4,6 +4,8 @@ import sys
 sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 from selenium import webdriver
 from time import sleep
+from selenium.webdriver.support.ui import Select
+# from selenium.webdriver.support.ui import Select
 # 输出乱码
 brower = webdriver.Chrome()
 brower.get("http://www.zhongmin.cn/accid/Product/accident348.html/")
@@ -19,10 +21,15 @@ brower.find_element_by_id("txtSubStart").send_keys("2016-06-12")
 brower.find_element_by_id("txtSName").send_keys("测试占志才")
 # select=brower.find_element_by_id("sltSType")
 # select.iselectByVisibleText(“身份证”)
-brower.find_element_by_id("sltSType").click()
+# select = Select(driver.find_element_by_tag_name("select"))
+# select.deselect_all()
+# select.select_by_visible_text("Edam")
 
-
-
+# select = Select(brower.find_element_by_tag_name("td>div>select"))
+# select.deselect_all()
+# select.select_by_visible_text("身份证")
+sel = brower.find_element_by_xpath("//select[@id='sltSType']")
+Select(sel).select_by_value('0')  #未审核
 
 
 

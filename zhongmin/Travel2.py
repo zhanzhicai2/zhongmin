@@ -9,29 +9,27 @@ sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 d1 = datetime.datetime.now()
 d3 = datetime.date(d1.year,d1.month+1,d1.day)
 d2 = d3.strftime('%Y-%m-%d')
-broweb = webdriver.Chrome()
 def by_id(parameter_list):
     broweb.find_element_by_id(parameter_list).click()
+def Id_keys(id,keys):
+    broweb.find_element_by_id(id).send_keys(keys) 
+broweb = webdriver.Chrome()
 broweb.get('http://www.zhongmin.cn/Travel/TravelBuyNew2.aspx?id=9&day=7')
-broweb.find_element_by_id('txtUserName').send_keys('13243733102')
+Id_keys('txtUserName','13243733102')
 broweb.find_element_by_xpath(".//*[@id='txtPassWord_text']").click()
-broweb.find_element_by_id('txtPassWord').send_keys('zhan18702655166')
-broweb.find_element_by_id('btnAllLogin').click()
+Id_keys('txtPassWord','zhan18702655166')
+by_id('btnAllLogin')
 time.sleep(3)
-# broweb.find_element_by_class_name('lg_close').click()
-broweb.find_element_by_id('txtSubStart').send_keys(d2)
+Id_keys('txtSubStart',d2)
 broweb.implicitly_wait(3000)
-# broweb.find_element_by_id('holdersub0').click()
-
-ids = ['holdersub0','in1_6518474','btnpostdate','agree','imgBuy']
-
-for value in ids:
-    by_id(value)
-    time.sleep(2)
-
-# broweb.find_element_by_id('in1_6518474').click()
-
-# broweb.find_element_by_id('btnpostdate').click()
-# broweb.find_element_by_id('agree').click()
-# broweb.find_element_by_id('holdersub0').click()
-# by_id('imgBuy')
+sname1 = ['12334','?"1"','zhanzhicai#','测试占志才1','测试占志才']
+for value in sname1:
+    Id_keys('txtSName',value)
+    broweb.implicitly_wait(3000)
+    broweb.find_element_by_class_name('tbrxx_tit').click()
+    if value =='测试占志才' :
+        x =broweb.find_element_by_class_name('pa_ui_validator_oncorrect')
+    else:
+        x =broweb.find_element_by_class_name('pa_ui_validator_onerror')
+        broweb.find_element_by_id('txtSName').clear()
+    print(value+"=信息："+x.text)

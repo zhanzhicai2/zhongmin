@@ -22,14 +22,20 @@ by_id('btnAllLogin')
 time.sleep(3)
 Id_keys('txtSubStart',d2)
 broweb.implicitly_wait(3000)
-sname1 = ['12334','?"1"','zhanzhicai#','测试占志才1','测试占志才']
-for value in sname1:
+# sname1 = ['12334','?"1"','zhanzhicai#','测试占志才1','测试占志才']
+sname1 = [('12334','36068119910502219'),('?"1"','36068119910502221S'),('zhanzhicai#','360681199105022219ss'),('测试占志才1','36068119910502221X'),('测试占志才','360681199105022219')]
+for value,keys in sname1:
     Id_keys('txtSName',value)
+    Id_keys('txtSNo',keys)
     broweb.implicitly_wait(3000)
     broweb.find_element_by_class_name('tbrxx_tit').click()
     if value =='测试占志才' :
-        x =broweb.find_element_by_class_name('pa_ui_validator_oncorrect')
+        x =broweb.find_element_by_id('tipBox_holdname').find_element_by_class_name('pa_ui_validator_oncorrect')
+        y =broweb.find_element_by_id('tipBox_holdcard').find_element_by_class_name('pa_ui_validator_oncorrect')
     else:
-        x =broweb.find_element_by_class_name('pa_ui_validator_onerror')
-        broweb.find_element_by_id('txtSName').clear()
-    print(value+"=信息："+x.text)
+        x =broweb.find_element_by_id('tipBox_holdname').find_element_by_class_name('pa_ui_validator_onerror')
+        y =broweb.find_element_by_id('tipBox_holdcard').find_element_by_class_name('pa_ui_validator_onerror')
+        time.sleep(2)
+    print(value+"=信息："+x.text+"---"+keys+"=信息"+y.text)
+    broweb.find_element_by_id('txtSName').clear()
+    broweb.find_element_by_id('txtSNo').clear()

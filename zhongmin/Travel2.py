@@ -35,7 +35,7 @@ for value,keys in sname1:
     else:
         x =broweb.find_element_by_id('tipBox_holdname').find_element_by_class_name('pa_ui_validator_onerror')
         y =broweb.find_element_by_id('tipBox_holdcard').find_element_by_class_name('pa_ui_validator_onerror')
-        time.sleep(2)
+        # time.sleep(2)
     print(value+"=信息："+x.text+"---"+keys+"=信息"+y.text)
     broweb.find_element_by_id('txtSName').clear()
     broweb.find_element_by_id('txtSNo').clear()

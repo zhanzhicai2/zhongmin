@@ -4,9 +4,13 @@ import sys
 sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 # from selenium import webdriver
 from selenium import webdriver
+<<<<<<< HEAD
 # from time import sleep
 
 
+=======
+from time import sleep
+>>>>>>> 83086e7408b9ab5827e7ffce7658f5c24cba1f76
 from selenium.webdriver.support.ui import Select
 # from selenium.webdriver.support.ui import Select
 # 输出乱码
@@ -33,6 +37,7 @@ brower.find_element_by_id("txtSName").send_keys("测试占志才")
 # select.select_by_visible_text("身份证")
 sel = brower.find_element_by_xpath("//select[@id='sltSType']")
 Select(sel).select_by_value('0')  #未审核
+<<<<<<< HEAD
 brower.find_element_by_id('txtSNo').send_keys('110101198106013496')
 brower.implicitly_wait(30000)
 brower.find_element_by_id('txtSPhone').send_keys('13243733102')
@@ -47,3 +52,16 @@ brower.find_element_by_id('btnpostdate1').click()
 brower.find_element_by_id('agree').click()
 brower.find_element_by_id('imgBuy').click()
 brower.find_element_by_id('dd')
+=======
+
+
+
+# title=brower.title
+# url= brower.current_url
+# handles = brower.window_handles
+# Whandles = brower.current_window_handle
+# print(Whandles)
+# print(handles)
+# print(url)
+# print(title)
+>>>>>>> 83086e7408b9ab5827e7ffce7658f5c24cba1f76

@@ -22,7 +22,7 @@ class Login(unittest.TestCase):
         # driver.maximize_window()
         
         # #登录
-        dengru.logo(self)
+        dengru.login(self)
 
         sele = brower.find_element_by_xpath("//select[@id='meJob1']")
         Select(sele).select_by_value('2202002-2')

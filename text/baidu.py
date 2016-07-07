@@ -8,7 +8,7 @@ import unittest,time
 import dengru
 
 class Login(unittest.TestCase):
-    
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
@@ -24,8 +24,8 @@ class Login(unittest.TestCase):
         # #登录
         dengru.login(self)
 
-        sele = brower.find_element_by_xpath("//select[@id='meJob1']")
-        Select(sele).select_by_value('2202002-2')
+        self.sele = brower.find_element_by_xpath("//select[@id='meJob1']")
+        Select(self.sele).select_by_value('2202002-2')
         brower.find_element_by_id('btnpostdate').click()
         brower.find_element_by_id('agree').click()
         brower.find_element_by_id('imgBuy').click()

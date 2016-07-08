@@ -17,9 +17,11 @@ class Login(unittest.TestCase):
     def test_login(self):
         driver = self.driver
         driver.get(self.base_url)
-        driver.maximize_window()      
-        # #登录
-        tbrxx_tit.login(self)
+        driver.maximize_window()
+        #登录
+
+        # #投保人信息
+        tbrxx_tit.tbrxx_tit(self)
 
         sele = driver.find_element_by_xpath("//select[@id='meJob1']")
         Select(sele).select_by_value('2202002-2')

@@ -4,14 +4,10 @@ import time#时间
 #改变标准输出的默认编码
 sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 # from selenium import webdriver
+import unittest,time
 from selenium.webdriver.support.ui import Select
-# 客户健康告知
+
 def login(self):
-    driver = self.driver
-    driver.find_element_by_id('spanBuy').find_element_by_class_name('mr16').click()
-    driver.find_element_by_class_name('gz_next').click()
-#投保人信息 
-def tbrxx_tit(self):
     driver = self.driver
     driver.find_element_by_id('spanBuy').click()
     driver.find_element_by_class_name('lg_close').click()

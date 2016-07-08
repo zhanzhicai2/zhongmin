@@ -12,7 +12,7 @@ d2 = d3.strftime('%Y-%m-%d')
 broweb = webdriver.Chrome()
 def by_id(parameter_list):
     broweb.find_element_by_id(parameter_list).click()
-broweb.get('http://www.zhongmin.cn/Travel/TravelBuyNew2.aspx?id=9&day=7')
+broweb.get('http://www.zhongmin.cn/Travel/TravelBuyNew2.aspx?id=704&day=5')
 broweb.find_element_by_id('txtUserName').send_keys('13243733102')
 broweb.find_element_by_xpath(".//*[@id='txtPassWord_text']").click()
 broweb.find_element_by_id('txtPassWord').send_keys('zhan18702655166')

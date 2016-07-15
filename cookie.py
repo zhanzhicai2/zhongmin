@@ -1,10 +1,6 @@
+# from selenium import webdriver
 from selenium import webdriver
-import time
-
-driver = webdriver.Chrome()
-driver.get('http://www.baidu.com')
-time.sleep(5)
-cookie = driver.get_cookies()
-print(cookie)
-driver.quit()
-input.__getattribute__
+b = webdriver.Chrome()
+b.git('http://www.baidu.com')
+b.find_element_by_id('nih').find_element_by_id('take').click()
+b.find_element_by_id('ddd').send_keys('nihgao')

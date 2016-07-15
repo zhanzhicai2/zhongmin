@@ -1,9 +1,10 @@
 from selenium import webdriver
-from time import sleep
+# from time import sleep
 import time
+# import selenium
 
 driver = webdriver.Chrome()
-driver.get('http:www.baidu.com')
+driver.get('http://www.baidu.com')
 # 获取当前窗口
 nowhandle = driver.current_window_handle
 # print(nowhandle)
@@ -26,7 +27,6 @@ for handle in allhandle:
         driver.find_element_by_id('TANGRAM__PSP_4__submitWrapper').click()
         driver.implicitly_wait(3000)
         driver.close()
-
 driver.switch_to_window(nowhandle)
 driver.find_element_by_id('kw').send_keys("注册成功")
 

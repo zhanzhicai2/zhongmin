@@ -1,12 +1,11 @@
 from selenium import webdriver
-import time,datetime
+import time
+import datetime
 import io
 import sys
-#改变标准输出的默认编码
-sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import Select
-
+# 改变标准输出的默认编码
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8')
 # 时间+30
 d1 = datetime.datetime.now()
 d3 = datetime.date(d1.year,d1.month+1,d1.day)
@@ -41,7 +40,7 @@ time.sleep(2)
 broweb.find_element_by_id('txtAddress').send_keys('南山区白石洲塘头村五坊65号')
 broweb.find_element_by_id('txtPostCode').send_keys('554400')
 # 投保人信息
-def SelectZ(id,keys):
+def SelectZ(id, keys):
     selects = broweb.find_element_by_xpath(id)
     Select(selects).select_by_value(keys)
    
@@ -57,8 +56,6 @@ Select(selects1).select_by_value(28)
 # for value,keys in job:
 #     SelectZ(value,keys)
 #     time.sleep(2)
-
-
 
 
 ids = ['btnpostdate1','agree','imgBuy']

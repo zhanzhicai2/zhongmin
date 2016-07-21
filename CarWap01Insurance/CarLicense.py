@@ -1,0 +1,33 @@
+from selenium import webdriver
+import time
+
+
+Car = webdriver.Chrome()
+Car.get('http://wap01.zhongmin.cn/wap/CarLicense.aspx?ComType=9')
+Car.find_element_by_id('txtCity').click()
+time.sleep(2)
+Car.find_element_by_id('select_city').send_keys('中山')
+time.sleep(2)
+Car.find_element_by_id('divSearchCity').click()
+time.sleep(2)
+Car.find_element_by_id('txtLicense').send_keys('12345')
+Car.find_element_by_id('btnSure').click()
+time.sleep(1)
+Car.find_element_by_id('txtVName').send_keys('测试占志才')
+Car.find_element_by_id('txtVCertificate').send_keys('533527198909210238')
+Car.find_element_by_id('txtAMobile').send_keys('13243733102')
+Car.find_element_by_id('spBusStart').click()
+time.sleep(2)
+Car.find_element_by_class_name('dwbw').click()
+Car.find_element_by_id('btnSureOk').click()
+time.sleep(3)
+Car.find_element_by_id('txtFrameNo').send_keys('LFV2A1BS1D6094860')
+Car.find_element_by_id('txtEngineNo').send_keys('H45060')
+Car.find_element_by_id('txtAutoModel').send_keys('名爵NJ7182ZTA4轿车')
+Car.find_element_by_xpath(".//*[@id='page_CarAllInfor']/div/div[3]/div/ul/li[4]/span[2]").click()
+# Car.find_element_by_id('divRegisterDate').click()
+time.sleep(2)
+Car.find_element_by_class_name('dwbw').click()
+time.sleep(2)
+Car.find_element_by_id('btnSure').click()
+

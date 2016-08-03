@@ -8,16 +8,49 @@
 # for value in b:
 #     value.click()
 #     sleep(2)
-def count():
-    def f(j):
-        def g():
-            return j*j
-        return g
-    fs = []
-    for i in range(1, 4):
-        fs.append(f(i))  # f(i)立刻被执行，因此i的当前值被传入f()
-    return fs
-f1, f2, f3 = count()
-print(f1())
-print(f2())
-print(f3())
+# def count():
+#     def f(j):
+#         def g():
+#             return j*j
+#         return g
+#     fs = []
+#     for i in range(1, 4):
+#         fs.append(f(i))  # f(i)立刻被执行，因此i的当前值被传入f()
+#     return fs
+# f1, f2, f3 = count()
+# print(f1())
+# print(f2())
+# print(f3())
+
+
+def fib(n):
+    a, b = 0, 1
+    while b < n:
+        print(b, end=' ')
+        a, b = b, a+b
+    # print()
+    print("xiexie")
+
+x = 1
+while x < 10:
+    x = x * 2
+    print(x, end=' ')
+print(x)
+fib(10)
+# del x.counter
+
+# def fib2(n):
+#     result = []
+#     a, b = 0, 1
+#     while b < n:
+#         result.append(b)
+#         a, b = b, a+b
+#     print(result)
+#
+#
+# if __name__ == "__main__":
+#     import sys
+#     fib(int(sys.argv[1]))
+
+# fib(9)
+# fib2(30)

@@ -1,0 +1,91 @@
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+import time
+
+AccidProduct = webdriver.Chrome()
+# 728,
+mond = [729]
+LiPaySpanItem = ['LiPaySpanItem0', 'LiPaySpanItem1', 'LiPaySpanItem2']
+
+# E1608181636040047
+
+
+def selectId(id, keys):
+    id = AccidProduct.find_element_by_id(id)
+    Select(id).select_by_value(keys)
+for i in mond:
+    AccidProduct.get('http://test2016.4008822300.net.cn/health/product/AccidProduct.aspx?id=%s' % i)
+    for paySpan in LiPaySpanItem:
+        AccidProduct.find_element_by_id(paySpan).click()
+        AccidProduct.find_element_by_id('ibtnBuy2').click()
+        AccidProduct.implicitly_wait(2000)
+        AccidProduct.find_element_by_class_name('lg_close').click()
+        AccidProduct.implicitly_wait(2000)
+        AccidProduct.find_element_by_class_name('mr16').click()
+        AccidProduct.find_element_by_class_name('gz_next').click()
+        AccidProduct.implicitly_wait(2000)
+        AccidProduct.find_element_by_id('txtSName').send_keys('占志才')
+        sltSType = AccidProduct.find_element_by_id('sltSType')
+        Select(sltSType).select_by_value('0')
+        AccidProduct.find_element_by_id('txtSNo').send_keys("110101198003010153")
+        AccidProduct.find_element_by_id('txtSIdentityStart').send_keys('2012-05-16')
+        AccidProduct.find_element_by_id('txtSIdentityEnd').send_keys('2022-05-2')
+        AccidProduct.find_element_by_id('txtSPhone').send_keys('13243955686')
+        AccidProduct.find_element_by_id('txtSEmail').send_keys('zhanzhicai@zhongmin.net.cn')
+        sltProvince = AccidProduct.find_element_by_id('sltProvince')
+        Select(sltProvince).select_by_value('19-440000')
+        AccidProduct.implicitly_wait(3000)
+        sltCity = AccidProduct.find_element_by_id('sltCity')
+        Select(sltCity).select_by_value('246-440300')
+        AccidProduct.implicitly_wait(3000)
+        # selectId('sltxian', '2336-440305')
+        sltCity = AccidProduct.find_element_by_id('sltxian')
+        Select(sltCity).select_by_value('2336-440305')
+        AccidProduct.implicitly_wait(3000)
+        AccidProduct.find_element_by_id('txtAddress').send_keys('白石洲塘头村五坊65号')
+        # selectId('sltRel1', '1')
+        sltCity = AccidProduct.find_element_by_id('sltRel1')
+        Select(sltCity).select_by_value('1')
+        AccidProduct.implicitly_wait(3000)
+        sltSType = AccidProduct.find_element_by_id('sltHType1')
+        Select(sltSType).select_by_value('0')
+        AccidProduct.find_element_by_id('txtHName1').send_keys('占志擦')
+        AccidProduct.find_element_by_id('txtHNo1').send_keys('110101200903040032')
+        AccidProduct.find_element_by_id('chkforever1').click()
+        AccidProduct.find_element_by_id('txtHPhone1').send_keys('13213733558')
+        sltBCity = AccidProduct.find_element_by_id('sltBProvince')
+        Select(sltBCity).select_by_value('19')
+        AccidProduct.implicitly_wait(3000)
+        sltBCity = AccidProduct.find_element_by_id('sltBCity')
+        Select(sltBCity).select_by_value('440300')
+        AccidProduct.implicitly_wait(3000)
+        selbank = AccidProduct.find_element_by_id('selbank')
+        Select(selbank).select_by_value('DEBITCMBCHIAN')
+        AccidProduct.implicitly_wait(3000)
+
+        AccidProduct.find_element_by_id('txtbankcode').send_keys('6214836557050727')
+        AccidProduct.find_element_by_id('txtbankcodesure').send_keys('6214836557050727')
+        AccidProduct.find_element_by_id('txtMemo').send_keys('测试人员测试')
+        AccidProduct.find_element_by_id('btnpostdate1').click()
+        AccidProduct.implicitly_wait(3000)
+        AccidProduct.find_element_by_id('agree').click()
+        AccidProduct.implicitly_wait(4000)
+        AccidProduct.find_element_by_xpath(".//*[@id='divcountation2']/div[3]/div[13]/img[2]").click()
+        texts = AccidProduct.find_element_by_xpath(".//*[@id='form1']/div[8]/div[2]/div[2]/table/tbody/tr[2]/td[2]")
+        OrderID = texts.text
+        time.sleep(2)
+        AccidProduct.get("http://admin2016.4008822300.net.cn/testwhd.aspx")
+        time.sleep(2)
+        AccidProduct.find_element_by_id('txtHezhongSubnumber').send_keys(OrderID)
+        AccidProduct.find_element_by_id('Button27').click()
+        time.sleep(2)
+        AccidProduct.find_element_by_id('Button28').click()
+        time.sleep(2)
+        HezhongMsg = AccidProduct.find_element_by_id('lblHezhongMsg')
+        HezhongMsgID = HezhongMsg.text
+        print("ID"+str(i)+"年限："+str(paySpan)+"保额："+str(HezhongMsgID)+" 订单号：" + OrderID)
+        AccidProduct.implicitly_wait(4000)
+        AccidProduct.get('http://test2016.4008822300.net.cn/health/product/AccidProduct.aspx?id=%s' % i)
+        AccidProduct.find_element_by_id(paySpan).click()
+        time.sleep(2)
+AccidProduct.quit()

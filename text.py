@@ -23,20 +23,21 @@
 # print(f3())
 
 
-def fib(n):
-    a, b = 0, 1
-    while b < n:
-        print(b, end=' ')
-        a, b = b, a+b
-    # print()
-    print("xiexie")
+# def fib(n):
+#     a, b = 0, 1
+#     while b < n:
+#         print(b, end=' ')
+#         a, b = b, a+b
+#     # print()
+#     print("xiexie")
+#
+# x = 1
+# while x < 10:
+#     x = x * 2
+#     print(x, end=' ')
+# print(x)
+# fib(10)
 
-x = 1
-while x < 10:
-    x = x * 2
-    print(x, end=' ')
-print(x)
-fib(10)
 # del x.counter
 
 # def fib2(n):
@@ -54,3 +55,68 @@ fib(10)
 
 # fib(9)
 # fib2(30)
+# def funA(a, *b):
+#     print(a)
+#     print(b[1])
+# funA(100, 99, 334, 333)
+#
+#
+# def funB(a, **b):
+#     print(a)
+#     print(b)
+# funB(122, b=23)
+#
+#
+# def funC(a, **b):
+#     print(a)
+#     for x in b:
+#         print(b[x])
+#         print(x+":"+str(b[x]))
+#
+#
+# funC(122, p=34, b=23, h=89)
+
+def fab(max):
+    a, b = 0, 1
+    while a < max:
+        yield a
+        a, b = b, a+b
+
+for i in fab(20):
+    print(str(i)+',')
+    # print(str(i) + ',', end='')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

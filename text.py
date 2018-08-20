@@ -1,6 +1,6 @@
 # from selenium import webdriver
-# from time import sleep
-#
+import time
+import threading
 #
 # brweb = webdriver.Chrome()
 # brweb.get('https://www.baidu.com/')
@@ -76,20 +76,40 @@
 #
 # funC(122, p=34, b=23, h=89)
 
-def fab(max):
-    a, b = 0, 1
-    while a < max:
-        yield a
-        a, b = b, a+b
+# def fab(max):
+#     a, b = 0, 1
+#     while a < max:
+#         yield a
+#         a, b = b, a+b
+#
+# for i in fab(20):
+#     print(str(i)+',')
+#     # print(str(i) + ',', end='')
 
-for i in fab(20):
-    print(str(i)+',')
-    # print(str(i) + ',', end='')
+# yield
+
+def create_yield():
+    my_list = range(3)
+    for i in my_list:
+        yield i*i
+
+print(create_yield())
+my_create_yield = create_yield()
+for i in my_create_yield:
+    print(i)
+# 多线程
 
 
+def sorry():
+    i = 1
+    print('我错了', ++i)
+    time.sleep(1)
 
 
-
+if __name__ == '__main__':
+    for i in range(5):
+        t = threading.Thread(target=sorry)
+        t.start()
 
 
 

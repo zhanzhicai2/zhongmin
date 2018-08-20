@@ -19,3 +19,14 @@ if birth < 2000:
     print('00前')
 else:
     print('00后')
+
+
+def fun1(names):
+    print "fun1"
+def fun2(nameb):
+    test()
+    print "fun2"
+
+@fun2
+def test():
+    print "test()"

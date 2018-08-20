@@ -1,5 +1,5 @@
+import time
 from appium import webdriver
-
 
 desired_caps = {
 
@@ -7,7 +7,7 @@ desired_caps = {
 
                 'deviceName': 'N2F4C15C18024017',
 
-                'platformVersion': '5.0.2',
+                'platformVersion': '6.0.2',
 
                 # apk包名
 
@@ -18,4 +18,5 @@ desired_caps = {
                 'appActivity': 'com.zhongmin.lingling.SplashActivity'
                 }
 
-driver = webdriver.Remote('http://127.0.0.1:4725/wd/hub', desired_caps)
+driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
+time.sleep(5)

@@ -39,6 +39,8 @@ Select(loads2).select_by_value('233-440300')
 time.sleep(2)
 broweb.find_element_by_id('txtAddress').send_keys('南山区白石洲塘头村五坊65号')
 broweb.find_element_by_id('txtPostCode').send_keys('554400')
+
+
 # 投保人信息
 def SelectZ(id, keys):
     selects = broweb.find_element_by_xpath(id)
@@ -49,8 +51,8 @@ sltRel1 = broweb.find_element_by_id('sltRel1')
 Select(sltRel1).select_by_value('0')
 time.sleep(2)
 # 职业
-job = [('hJob11','2'),('hJob21','28'),('hJob31','0201001-1')]
-SelectZ(".//*[@id='hJob11']",'2')
+job = [('hJob11', '2'), ('hJob21', '28'), ('hJob31', '0201001-1')]
+SelectZ(".//*[@id='hJob11']", '2')
 selects1 = broweb.find_element_by_xpath('hJob11').find_element_by_id('hJob21')
 Select(selects1).select_by_value(28)
 # for value,keys in job:

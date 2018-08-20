@@ -5,4 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/pythonse.iml" filepath="$PROJECT_DIR$/.idea/pythonse.iml" />
     </modules>
   </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Jinja2" /><option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/../flask_web\templates" />
+      </list>
+    </option>
+
+  </component>
 </project>

@@ -6,11 +6,15 @@
     // "isShellCommand": true,
     // "args": ["Hello World"],
     // "showOutput": "always"
-    "version": "0.1.0",
+     "version": "0.1.0",
     "command": "python",
     "isShellCommand": true,
+    "args": ["${file}"],
     "showOutput": "always",
-    "args": [
-        "${file}"
-    ]
+    "options": {
+    "env":{
+        "PYTHONIOENCODING": "UTF-8"
+      }
+  }
+}
 }

@@ -29,14 +29,14 @@ def identity_type(title, info):
 
 # 被保人证件号区分
 def identity_type_two(title, info):
-    title.find_element_by_xpath('//*[@id="buyPage"]/div[1]/div[4]/div[1]/div/dl[6]/dd/div/span').click
+    title.find_element_by_xpath('//*[@id="buyPage"]/div[1]/div[4]/div[1]/div/dl[6]/dd/div/span').click()
     # r1_IdentityType1  被保人证件号 0 代表身份证
     slt_stype = info.r1_IdentityType1
     slt_stype = '//*[@id="r1_IdentityType1"]/li[' + slt_stype + ']'
     title.find_element_by_xpath(slt_stype).click()
     title.find_element_by_id('r1_IdentityCode1').send_keys(info.r1_IdentityCode1)
     if slt_stype != 0:
-        title.find_element_by_id ('r1_BirthDay1').send_keys(info.r1_BirthDay1)
+        title.find_element_by_id('r1_BirthDay1').send_keys(info.r1_BirthDay1)
         sex = '//*[@id="r1_Sex1"]/em[' + info.r1_Sex1 + ']'
         title.find_element_by_xpath(sex).click()
 

@@ -18,8 +18,16 @@
 # print(l)
 # # print(list.sorted())
 
-def func():
-   for i in xrange(10):
-        yield i
 
+class Funk(object):
+    def func(self):
+        self.a()
+        print("=====")
+
+    def a(self):
+        print("aaaa")
 # [i for i in xrange(10)]
+
+
+fun = Funk()
+fun.func()

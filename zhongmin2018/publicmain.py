@@ -57,11 +57,6 @@ def lnsure_number(title):
     title.find_element_by_xpath('//*[@id="r1_BuyNumber1"]/li[1]').click()
 
 
-
-
-
-
-
 # 下拉框
 def elect_id(title, kwargs):
     for id, keys in kwargs:
@@ -69,6 +64,6 @@ def elect_id(title, kwargs):
         Select(id).select_by_value(keys)
         title.implicitly_wait(2000)
 # 职业
-def applicant_job(title, info):
+# def applicant_job(title, info):
 
 

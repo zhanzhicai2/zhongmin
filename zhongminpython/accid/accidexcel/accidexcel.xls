@@ -1,2 +1,2 @@
-Coverage	pid	warning	txtSubStart	txtSName	sltSType	txtSNo	txtBirth	txtSPhone	txtSEmail
-accid	7898	0	2018/3/25	占志才	3	G547865	1990/5/2	13243733102	1610893869@qq.com
+url	securityPeriod	txtSubStart	txtSName	sltSType	txtSNo	sex	txtBirth	txtSPhone	txtSEmail
+7898	0	2018/3/25	占志才	3	G547865		1990/5/2	13243733102	1610893869@qq.com

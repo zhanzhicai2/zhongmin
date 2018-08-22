@@ -4,7 +4,7 @@ import io
 import sys
 
 broweb = webdriver.Chrome()
-header = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"}
+# header = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"}
 for i in range(1, 5):
     broweb.get('https://www.zhongmin.cn/accid/detail/ip11136_is1.html')
     broweb.find_element_by_id('buy').click()
